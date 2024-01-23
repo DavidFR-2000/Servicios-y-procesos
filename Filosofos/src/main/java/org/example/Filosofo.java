@@ -1,7 +1,7 @@
 package org.example;
 import java.util.concurrent.Semaphore;
 
-public class Filosofo implements Runnable {
+public class Filosofo extends Thread {
 
     private int id;
     private Semaphore[] tenedores;
@@ -23,7 +23,9 @@ public class Filosofo implements Runnable {
 
     private void pensar() {
         try {
-            Thread.sleep((long) (Math.random() * 1000));
+            int tiempo = (int) (Math.random() * 1000);
+            System.out.println("Filósofo " + id + " está pensando durante " + tiempo + " milisegundos");
+            Thread.sleep(tiempo);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

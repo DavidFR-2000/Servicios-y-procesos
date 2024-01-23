@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "af7c9de7-c972-4244-8846-4e93ef285b73",
+		"name": "Bloggin-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32295268"
+	},
+	"item": [
+		{
+			"name": "ListarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearUsuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"NuevoUsuario\",\r\n    \"imagen\": \"imagen.jpg\",\r\n    \"publicacion\": \"NuevaPublicacion\",\r\n    \"comentarios\": \"NuevosComentarios\",\r\n    \"fecha\": \"2024-01-23T12:34:56Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUsuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizacionCompletaUsuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Miguel\",\r\n    \"imagen\": \"Miguel.jpg\",\r\n    \"publicacion\": \"La tarde en granada\",\r\n    \"comentarios\": \"Que bonita es\",\r\n    \"fecha\": \"2021-01-23T12:34:56Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuariosLIKE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios/filtro-like?filtroNombre=Maria",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"filtro-like"
+					],
+					"query": [
+						{
+							"key": "filtroNombre",
+							"value": "Maria"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregacionGET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios/agregacion?tipoAgregacion=AVG",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"agregacion"
+					],
+					"query": [
+						{
+							"key": "tipoAgregacion",
+							"value": "AVG"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "condicionFECHA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios/condicion?fechaCondicion=2024-02-05",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"condicion"
+					],
+					"query": [
+						{
+							"key": "fechaCondicion",
+							"value": "2024-02-05"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MetodoIn",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/filtro-in?listaParametros=Miguel&listaParametros=Raul&listaParametros=Carmen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"filtro-in"
+					],
+					"query": [
+						{
+							"key": "listaParametros",
+							"value": "Miguel"
+						},
+						{
+							"key": "listaParametros",
+							"value": "Raul"
+						},
+						{
+							"key": "listaParametros",
+							"value": "Carmen"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
