@@ -22,6 +22,7 @@
 
         <!-- entities -->
         <mapping class="entidades.usuarios"/>
+        <mapping class="entidades.entradas"/>
 
 
     </session-factory>
